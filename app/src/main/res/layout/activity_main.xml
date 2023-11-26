@@ -6,13 +6,105 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".AgregarInsumosActivity">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/borde"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Valora tu Pelicula"
+                    android:textAlignment="center"
+                    android:textColor="#666666"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/agreganombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/borde"
+                    android:gravity="start|center_vertical"
+                    android:hint="Nombre Pelicula"
+                    android:padding="16dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/agregadirector"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/borde"
+                    android:gravity="start|center_vertical"
+                    android:hint="Director "
+                    android:padding="16dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/agregasipnosis"
+                    android:layout_width="match_parent"
+                    android:layout_height="87dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/borde"
+                    android:gravity="start|center_vertical"
+                    android:hint="Sipnosis"
+                    android:padding="16dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/agregaopinion"
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/borde"
+                    android:gravity="start|center_vertical"
+                    android:hint="Opinion"
+                    android:padding="16dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/agregacalificacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/borde"
+                    android:gravity="start|center_vertical"
+                    android:hint="Calificación"
+                    android:padding="16dp"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btncalificar"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/boton"
+                    android:text="Calificado"
+                    android:textSize="18sp"
+                    app:cornerRadius="20dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
