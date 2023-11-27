@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.google.firebase.database.DataSnapshot;
+
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
@@ -18,6 +21,8 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.w3c.dom.Text;
+
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
     private Mqtt mqttManager;
@@ -58,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), ListaActivity.class);
                 startActivity(intent);
                 finish();
+
+                Peliculas peliculas = new Peliculas();
+                //libro.setIdAutor("11111");
+                peliculas.setNombre(Nombre.getText().toString());
+                peliculas.setDirector(Director.getText().toString());
+                peliculas.setSipnosis(Sipnosis.getText().toString());
+                peliculas.setOpinion(Opinion.getText().toString());
+                peliculas.setCalificacion(Calificacion.getText().toString());
+                databaseReference.child("Pelicula").child(peliculas.getNombre()).setValue(peliculas);
+
             }
         });
     }
